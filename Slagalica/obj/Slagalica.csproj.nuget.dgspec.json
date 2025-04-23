@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aleks\\OneDrive\\Desktop\\Projects\\Remake-Projects\\Slagalica\\Slagalica.csproj": {}
+    "C:\\Users\\aleks\\OneDrive\\Desktop\\Slagalica\\Slagalica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aleks\\OneDrive\\Desktop\\Projects\\Remake-Projects\\Slagalica\\Slagalica.csproj": {
+    "C:\\Users\\aleks\\OneDrive\\Desktop\\Slagalica\\Slagalica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aleks\\OneDrive\\Desktop\\Projects\\Remake-Projects\\Slagalica\\Slagalica.csproj",
+        "projectUniqueName": "C:\\Users\\aleks\\OneDrive\\Desktop\\Slagalica\\Slagalica.csproj",
         "projectName": "Slagalica",
-        "projectPath": "C:\\Users\\aleks\\OneDrive\\Desktop\\Projects\\Remake-Projects\\Slagalica\\Slagalica.csproj",
+        "projectPath": "C:\\Users\\aleks\\OneDrive\\Desktop\\Slagalica\\Slagalica.csproj",
         "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aleks\\OneDrive\\Desktop\\Projects\\Remake-Projects\\Slagalica\\obj\\",
+        "outputPath": "C:\\Users\\aleks\\OneDrive\\Desktop\\Slagalica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

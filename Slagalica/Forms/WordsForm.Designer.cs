@@ -109,6 +109,7 @@
 			// buttonDeleteAllLetters
 			// 
 			buttonDeleteAllLetters.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonDeleteAllLetters.FlatAppearance.MouseOverBackColor = Color.Red;
 			buttonDeleteAllLetters.FlatStyle = FlatStyle.Flat;
 			buttonDeleteAllLetters.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonDeleteAllLetters.Location = new Point(584, 321);
@@ -122,6 +123,8 @@
 			// buttonBackspaceLetter
 			// 
 			buttonBackspaceLetter.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonBackspaceLetter.FlatAppearance.MouseDownBackColor = Color.Yellow;
+			buttonBackspaceLetter.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonBackspaceLetter.FlatStyle = FlatStyle.Flat;
 			buttonBackspaceLetter.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonBackspaceLetter.Location = new Point(584, 260);
@@ -135,6 +138,8 @@
 			// buttonAcceptWord
 			// 
 			buttonAcceptWord.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonAcceptWord.FlatAppearance.MouseDownBackColor = Color.Lime;
+			buttonAcceptWord.FlatAppearance.MouseOverBackColor = Color.Lime;
 			buttonAcceptWord.FlatStyle = FlatStyle.Flat;
 			buttonAcceptWord.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAcceptWord.Location = new Point(279, 283);
@@ -147,8 +152,6 @@
 			// buttonAnswerLetter12
 			// 
 			buttonAnswerLetter12.BackColor = Color.SteelBlue;
-			buttonAnswerLetter12.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter12.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter12.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter12.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter12.Location = new Point(706, 189);
@@ -161,8 +164,6 @@
 			// buttonAnswerLetter11
 			// 
 			buttonAnswerLetter11.BackColor = Color.SteelBlue;
-			buttonAnswerLetter11.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter11.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter11.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter11.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter11.Location = new Point(645, 189);
@@ -175,8 +176,6 @@
 			// buttonAnswerLetter10
 			// 
 			buttonAnswerLetter10.BackColor = Color.SteelBlue;
-			buttonAnswerLetter10.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter10.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter10.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter10.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter10.Location = new Point(584, 189);
@@ -189,8 +188,6 @@
 			// buttonAnswerLetter9
 			// 
 			buttonAnswerLetter9.BackColor = Color.SteelBlue;
-			buttonAnswerLetter9.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter9.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter9.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter9.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter9.Location = new Point(523, 189);
@@ -203,8 +200,6 @@
 			// buttonAnswerLetter8
 			// 
 			buttonAnswerLetter8.BackColor = Color.SteelBlue;
-			buttonAnswerLetter8.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter8.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter8.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter8.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter8.Location = new Point(462, 189);
@@ -217,8 +212,6 @@
 			// buttonAnswerLetter7
 			// 
 			buttonAnswerLetter7.BackColor = Color.SteelBlue;
-			buttonAnswerLetter7.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter7.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter7.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter7.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter7.Location = new Point(401, 189);
@@ -231,8 +224,6 @@
 			// buttonAnswerLetter6
 			// 
 			buttonAnswerLetter6.BackColor = Color.SteelBlue;
-			buttonAnswerLetter6.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter6.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter6.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter6.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter6.Location = new Point(340, 189);
@@ -245,8 +236,6 @@
 			// buttonAnswerLetter5
 			// 
 			buttonAnswerLetter5.BackColor = Color.SteelBlue;
-			buttonAnswerLetter5.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter5.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter5.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter5.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter5.Location = new Point(279, 189);
@@ -259,8 +248,6 @@
 			// buttonAnswerLetter4
 			// 
 			buttonAnswerLetter4.BackColor = Color.SteelBlue;
-			buttonAnswerLetter4.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter4.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter4.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter4.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter4.Location = new Point(218, 189);
@@ -273,8 +260,6 @@
 			// buttonAnswerLetter3
 			// 
 			buttonAnswerLetter3.BackColor = Color.SteelBlue;
-			buttonAnswerLetter3.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter3.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter3.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter3.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter3.Location = new Point(157, 189);
@@ -287,8 +272,6 @@
 			// buttonAnswerLetter2
 			// 
 			buttonAnswerLetter2.BackColor = Color.SteelBlue;
-			buttonAnswerLetter2.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter2.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter2.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter2.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter2.Location = new Point(96, 189);
@@ -301,8 +284,6 @@
 			// buttonAnswerLetter1
 			// 
 			buttonAnswerLetter1.BackColor = Color.SteelBlue;
-			buttonAnswerLetter1.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonAnswerLetter1.FlatAppearance.MouseOverBackColor = Color.Yellow;
 			buttonAnswerLetter1.FlatStyle = FlatStyle.Flat;
 			buttonAnswerLetter1.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonAnswerLetter1.Location = new Point(35, 189);
@@ -315,8 +296,8 @@
 			// buttonLetter12
 			// 
 			buttonLetter12.BackColor = Color.SteelBlue;
-			buttonLetter12.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter12.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter12.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter12.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter12.FlatStyle = FlatStyle.Flat;
 			buttonLetter12.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter12.Location = new Point(560, 93);
@@ -331,8 +312,8 @@
 			// buttonLetter11
 			// 
 			buttonLetter11.BackColor = Color.SteelBlue;
-			buttonLetter11.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter11.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter11.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter11.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter11.FlatStyle = FlatStyle.Flat;
 			buttonLetter11.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter11.Location = new Point(476, 93);
@@ -347,8 +328,8 @@
 			// buttonLetter10
 			// 
 			buttonLetter10.BackColor = Color.SteelBlue;
-			buttonLetter10.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter10.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter10.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter10.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter10.FlatStyle = FlatStyle.Flat;
 			buttonLetter10.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter10.Location = new Point(392, 93);
@@ -363,8 +344,8 @@
 			// buttonLetter9
 			// 
 			buttonLetter9.BackColor = Color.SteelBlue;
-			buttonLetter9.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter9.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter9.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter9.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter9.FlatStyle = FlatStyle.Flat;
 			buttonLetter9.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter9.Location = new Point(308, 93);
@@ -379,8 +360,8 @@
 			// buttonLetter8
 			// 
 			buttonLetter8.BackColor = Color.SteelBlue;
-			buttonLetter8.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter8.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter8.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter8.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter8.FlatStyle = FlatStyle.Flat;
 			buttonLetter8.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter8.Location = new Point(224, 93);
@@ -395,8 +376,8 @@
 			// buttonLetter7
 			// 
 			buttonLetter7.BackColor = Color.SteelBlue;
-			buttonLetter7.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter7.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter7.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter7.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter7.FlatStyle = FlatStyle.Flat;
 			buttonLetter7.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter7.Location = new Point(140, 93);
@@ -411,8 +392,8 @@
 			// buttonLetter6
 			// 
 			buttonLetter6.BackColor = Color.SteelBlue;
-			buttonLetter6.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter6.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter6.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter6.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter6.FlatStyle = FlatStyle.Flat;
 			buttonLetter6.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter6.Location = new Point(560, 20);
@@ -427,8 +408,8 @@
 			// buttonLetter5
 			// 
 			buttonLetter5.BackColor = Color.SteelBlue;
-			buttonLetter5.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter5.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter5.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter5.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter5.FlatStyle = FlatStyle.Flat;
 			buttonLetter5.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter5.Location = new Point(476, 20);
@@ -443,8 +424,8 @@
 			// buttonLetter4
 			// 
 			buttonLetter4.BackColor = Color.SteelBlue;
-			buttonLetter4.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter4.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter4.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter4.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter4.FlatStyle = FlatStyle.Flat;
 			buttonLetter4.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter4.Location = new Point(392, 20);
@@ -459,8 +440,8 @@
 			// buttonLetter3
 			// 
 			buttonLetter3.BackColor = Color.SteelBlue;
-			buttonLetter3.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter3.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter3.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter3.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter3.FlatStyle = FlatStyle.Flat;
 			buttonLetter3.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter3.Location = new Point(308, 20);
@@ -475,8 +456,8 @@
 			// buttonLetter2
 			// 
 			buttonLetter2.BackColor = Color.SteelBlue;
-			buttonLetter2.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter2.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter2.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter2.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter2.FlatStyle = FlatStyle.Flat;
 			buttonLetter2.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter2.Location = new Point(224, 20);
@@ -491,8 +472,8 @@
 			// buttonLetter1
 			// 
 			buttonLetter1.BackColor = Color.SteelBlue;
-			buttonLetter1.FlatAppearance.MouseDownBackColor = Color.Red;
-			buttonLetter1.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			buttonLetter1.FlatAppearance.MouseDownBackColor = Color.Cyan;
+			buttonLetter1.FlatAppearance.MouseOverBackColor = Color.Cyan;
 			buttonLetter1.FlatStyle = FlatStyle.Flat;
 			buttonLetter1.Font = new Font("Yu Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			buttonLetter1.Location = new Point(140, 20);
