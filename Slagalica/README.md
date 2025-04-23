@@ -23,9 +23,5 @@ This is a remake of the popular Serbian TV quiz game **Slagalica**, built as par
 
 - **C#** and **Windows Forms** (.NET Framework)
 - Custom logic per mini-game
-- Dictionary loaded via `HashSet<string>` for fast validation
 - Timer-based gameplay
-- Scoring system based on accuracy and speed
-
-## 📂 Folder Structure
-
+- Scoring system based on accuracy
