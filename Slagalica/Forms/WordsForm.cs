@@ -16,7 +16,7 @@ namespace Slagalica.Forms
 	{
 		private List<Button> buttonsLetters; // List of buttons that sotres all the buttons of possible letters
 		private List<Button> buttonsAnswers; // Listo of buttons that stores all the buttons of answer lettres
-		private int currentButtonAnswer;	// Making track of index in which button next letter should be added
+		private int currentButtonAnswer;    // Making track of index in which button next letter should be added
 		public WordsForm()
 		{
 			InitializeComponent();
@@ -104,7 +104,8 @@ namespace Slagalica.Forms
 		//Deleting one by one asnwer letters
 		private void buttonBackspaceLetter_Click(object sender, EventArgs e)
 		{
-			if (this.currentButtonAnswer > 0) {
+			if (this.currentButtonAnswer > 0)
+			{
 
 				this.currentButtonAnswer--;
 				string letterToDelete = this.buttonsAnswers[this.currentButtonAnswer].Text;
@@ -117,7 +118,7 @@ namespace Slagalica.Forms
 						break;
 					}
 				}
-				
+
 			}
 		}
 	}
