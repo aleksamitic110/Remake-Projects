@@ -5,9 +5,12 @@ namespace Slagalica.Forms
 	{
 
 		private Font? originalFont; // Used for hover effects on buttons
+		public String language; // Used for language selection
 		public MainForm()
 		{
 			InitializeComponent();
+			this.rdButtonSrpski.Checked = true; // Default language is Serbian
+			this.language = "sr";
 		}
 
 		//This code makes logic and style for buttons when hovered
@@ -39,7 +42,10 @@ namespace Slagalica.Forms
 		#region BUTTON_CLICK
 		private void buttonStartGame_Click(object sender, EventArgs e)
 		{
-			WordsForm WordsForm = new WordsForm();
+			if (this.rdBtnEnglish.Checked)
+				this.language = "en";
+
+			WordsForm WordsForm = new WordsForm(this.language);
 			WordsForm.Show();
 			this.Hide();
 		}

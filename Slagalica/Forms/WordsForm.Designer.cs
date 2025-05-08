@@ -28,9 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordsForm));
 			labelWordsHeader = new Label();
 			Panel_Letters = new Panel();
+			buttonStop = new Button();
 			buttonDeleteAllLetters = new Button();
 			buttonBackspaceLetter = new Button();
 			buttonAcceptWord = new Button();
@@ -59,6 +61,7 @@
 			buttonLetter2 = new Button();
 			buttonLetter1 = new Button();
 			buttonBack = new Button();
+			letterTimer = new System.Windows.Forms.Timer(components);
 			Panel_Letters.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -74,6 +77,7 @@
 			// 
 			// Panel_Letters
 			// 
+			Panel_Letters.Controls.Add(buttonStop);
 			Panel_Letters.Controls.Add(buttonDeleteAllLetters);
 			Panel_Letters.Controls.Add(buttonBackspaceLetter);
 			Panel_Letters.Controls.Add(buttonAcceptWord);
@@ -105,6 +109,21 @@
 			Panel_Letters.Name = "Panel_Letters";
 			Panel_Letters.Size = new Size(776, 386);
 			Panel_Letters.TabIndex = 1;
+			// 
+			// buttonStop
+			// 
+			buttonStop.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonStop.FlatAppearance.MouseDownBackColor = Color.Lime;
+			buttonStop.FlatAppearance.MouseOverBackColor = Color.Lime;
+			buttonStop.FlatStyle = FlatStyle.Flat;
+			buttonStop.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			buttonStop.Location = new Point(279, 283);
+			buttonStop.Name = "buttonStop";
+			buttonStop.Size = new Size(238, 55);
+			buttonStop.TabIndex = 27;
+			buttonStop.Text = "Stop";
+			buttonStop.UseVisualStyleBackColor = true;
+			buttonStop.Click += buttonStop_Click;
 			// 
 			// buttonDeleteAllLetters
 			// 
@@ -148,6 +167,7 @@
 			buttonAcceptWord.TabIndex = 24;
 			buttonAcceptWord.Text = "Accept word";
 			buttonAcceptWord.UseVisualStyleBackColor = true;
+			buttonAcceptWord.Click += buttonAcceptWord_Click;
 			// 
 			// buttonAnswerLetter12
 			// 
@@ -305,7 +325,6 @@
 			buttonLetter12.Size = new Size(78, 67);
 			buttonLetter12.TabIndex = 11;
 			buttonLetter12.TabStop = false;
-			buttonLetter12.Text = "D";
 			buttonLetter12.UseVisualStyleBackColor = false;
 			buttonLetter12.MouseClick += buttonLetter_Click;
 			// 
@@ -321,7 +340,6 @@
 			buttonLetter11.Size = new Size(78, 67);
 			buttonLetter11.TabIndex = 10;
 			buttonLetter11.TabStop = false;
-			buttonLetter11.Text = "K";
 			buttonLetter11.UseVisualStyleBackColor = false;
 			buttonLetter11.MouseClick += buttonLetter_Click;
 			// 
@@ -337,7 +355,6 @@
 			buttonLetter10.Size = new Size(78, 67);
 			buttonLetter10.TabIndex = 9;
 			buttonLetter10.TabStop = false;
-			buttonLetter10.Text = "D";
 			buttonLetter10.UseVisualStyleBackColor = false;
 			buttonLetter10.MouseClick += buttonLetter_Click;
 			// 
@@ -353,7 +370,6 @@
 			buttonLetter9.Size = new Size(78, 67);
 			buttonLetter9.TabIndex = 8;
 			buttonLetter9.TabStop = false;
-			buttonLetter9.Text = "I";
 			buttonLetter9.UseVisualStyleBackColor = false;
 			buttonLetter9.MouseClick += buttonLetter_Click;
 			// 
@@ -369,7 +385,6 @@
 			buttonLetter8.Size = new Size(78, 67);
 			buttonLetter8.TabIndex = 7;
 			buttonLetter8.TabStop = false;
-			buttonLetter8.Text = "H";
 			buttonLetter8.UseVisualStyleBackColor = false;
 			buttonLetter8.MouseClick += buttonLetter_Click;
 			// 
@@ -385,7 +400,6 @@
 			buttonLetter7.Size = new Size(78, 67);
 			buttonLetter7.TabIndex = 6;
 			buttonLetter7.TabStop = false;
-			buttonLetter7.Text = "G";
 			buttonLetter7.UseVisualStyleBackColor = false;
 			buttonLetter7.MouseClick += buttonLetter_Click;
 			// 
@@ -401,7 +415,6 @@
 			buttonLetter6.Size = new Size(78, 67);
 			buttonLetter6.TabIndex = 5;
 			buttonLetter6.TabStop = false;
-			buttonLetter6.Text = "F";
 			buttonLetter6.UseVisualStyleBackColor = false;
 			buttonLetter6.MouseClick += buttonLetter_Click;
 			// 
@@ -417,7 +430,6 @@
 			buttonLetter5.Size = new Size(78, 67);
 			buttonLetter5.TabIndex = 4;
 			buttonLetter5.TabStop = false;
-			buttonLetter5.Text = "E";
 			buttonLetter5.UseVisualStyleBackColor = false;
 			buttonLetter5.MouseClick += buttonLetter_Click;
 			// 
@@ -433,7 +445,6 @@
 			buttonLetter4.Size = new Size(78, 67);
 			buttonLetter4.TabIndex = 3;
 			buttonLetter4.TabStop = false;
-			buttonLetter4.Text = "D";
 			buttonLetter4.UseVisualStyleBackColor = false;
 			buttonLetter4.MouseClick += buttonLetter_Click;
 			// 
@@ -449,7 +460,6 @@
 			buttonLetter3.Size = new Size(78, 67);
 			buttonLetter3.TabIndex = 2;
 			buttonLetter3.TabStop = false;
-			buttonLetter3.Text = "C";
 			buttonLetter3.UseVisualStyleBackColor = false;
 			buttonLetter3.MouseClick += buttonLetter_Click;
 			// 
@@ -465,7 +475,6 @@
 			buttonLetter2.Size = new Size(78, 67);
 			buttonLetter2.TabIndex = 1;
 			buttonLetter2.TabStop = false;
-			buttonLetter2.Text = "B";
 			buttonLetter2.UseVisualStyleBackColor = false;
 			buttonLetter2.MouseClick += buttonLetter_Click;
 			// 
@@ -481,7 +490,6 @@
 			buttonLetter1.Size = new Size(78, 67);
 			buttonLetter1.TabIndex = 0;
 			buttonLetter1.TabStop = false;
-			buttonLetter1.Text = "A";
 			buttonLetter1.UseVisualStyleBackColor = false;
 			buttonLetter1.MouseClick += buttonLetter_Click;
 			// 
@@ -512,6 +520,7 @@
 			Name = "WordsForm";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "WordsForm";
+			Load += WordsForm_Load;
 			Panel_Letters.ResumeLayout(false);
 			ResumeLayout(false);
 			PerformLayout();
@@ -549,5 +558,7 @@
 		private Button buttonAcceptWord;
 		private Button buttonDeleteAllLetters;
 		private Button buttonBackspaceLetter;
+		private Button buttonStop;
+		private System.Windows.Forms.Timer letterTimer;
 	}
 }

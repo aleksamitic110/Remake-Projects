@@ -36,6 +36,8 @@
 			buttonTraining = new Button();
 			buttonExplanation = new Button();
 			buttonExit = new Button();
+			rdButtonSrpski = new RadioButton();
+			rdBtnEnglish = new RadioButton();
 			Panel_Main_Welcom.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBoxStartingImage).BeginInit();
 			SuspendLayout();
@@ -123,6 +125,30 @@
 			buttonExit.UseVisualStyleBackColor = true;
 			buttonExit.Click += buttonExit_Click;
 			// 
+			// rdButtonSrpski
+			// 
+			rdButtonSrpski.AutoSize = true;
+			rdButtonSrpski.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			rdButtonSrpski.Location = new Point(133, 500);
+			rdButtonSrpski.Name = "rdButtonSrpski";
+			rdButtonSrpski.Size = new Size(91, 34);
+			rdButtonSrpski.TabIndex = 5;
+			rdButtonSrpski.TabStop = true;
+			rdButtonSrpski.Text = "Srpski";
+			rdButtonSrpski.UseVisualStyleBackColor = true;
+			// 
+			// rdBtnEnglish
+			// 
+			rdBtnEnglish.AutoSize = true;
+			rdBtnEnglish.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			rdBtnEnglish.Location = new Point(319, 500);
+			rdBtnEnglish.Name = "rdBtnEnglish";
+			rdBtnEnglish.Size = new Size(102, 34);
+			rdBtnEnglish.TabIndex = 6;
+			rdBtnEnglish.TabStop = true;
+			rdBtnEnglish.Text = "English";
+			rdBtnEnglish.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -131,6 +157,8 @@
 			BackColor = Color.SteelBlue;
 			ClientSize = new Size(552, 631);
 			ControlBox = false;
+			Controls.Add(rdBtnEnglish);
+			Controls.Add(rdButtonSrpski);
 			Controls.Add(buttonExit);
 			Controls.Add(buttonExplanation);
 			Controls.Add(buttonTraining);
@@ -147,6 +175,7 @@
 			Panel_Main_Welcom.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBoxStartingImage).EndInit();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -158,5 +187,7 @@
 		private Button buttonTraining;
 		private Button buttonExplanation;
 		private Button buttonExit;
+		private RadioButton rdButtonSrpski;
+		private RadioButton rdBtnEnglish;
 	}
 }

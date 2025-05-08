@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -17,7 +18,12 @@ namespace Slagalica.Forms
 		private List<Button> buttonsLetters; // List of buttons that sotres all the buttons of possible letters
 		private List<Button> buttonsAnswers; // Listo of buttons that stores all the buttons of answer lettres
 		private int currentButtonAnswer;    // Making track of index in which button next letter should be added
-		public WordsForm()
+		private String language; // Language of the game
+		private String computerWord; // Word that computer made
+		private int currentButtonLetterIndex_Ainmation = 0; // Index of the current letter that animation is being displayed for
+		private char currentChar_Animation = 'A'; // Current letter that is being displayed in the animation
+		private string shuffledWordLetters_Animation; // Shuffled letters of the word that is being displayed in the animation
+		public WordsForm(String language)
 		{
 			InitializeComponent();
 
@@ -54,7 +60,26 @@ namespace Slagalica.Forms
 			this.buttonsAnswers.Add(this.buttonAnswerLetter12);
 			#endregion
 			this.currentButtonAnswer = 0;
+			this.language = language;
+			this.buttonAcceptWord.Visible = false; // Accepting word button is not visible at the beginning
+			this.computerWord = "";
+			this.shuffledWordLetters_Animation = "";
+		}
+		private void WordsForm_Load(object sender, EventArgs e)
+		{
 
+			//Get computer word but shuffled for Animation
+			this.shuffledWordLetters_Animation = makeComputerWord();
+			this.buttonStop.Tag = 0;
+
+			//Making animation
+			letterTimer.Interval = 50;
+			letterTimer.Tick += LetterTimer_Tick;
+			letterTimer.Start();
+
+			//At start all buttons unclickable until animaiton is over
+			foreach (Button button in this.buttonsLetters)
+				button.Enabled = false;
 		}
 
 
@@ -66,6 +91,81 @@ namespace Slagalica.Forms
 			Program.MainForm.Show();
 			this.Close();
 		}
+
+		//Make computer word and return shuffled word of size 12
+		private string makeComputerWord()
+		{
+
+			//Checking language
+			string wordsFilePath = "";
+			if (this.language == "sr")
+				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
+			else
+				MessageBox.Show("There is no English version yet"); // To be implemented when english words are found
+
+			// Filter valid words
+			var validWords = File.ReadLines(wordsFilePath)
+									.Where(w => w.Length >= 9 && w.Length <= 12)
+									.ToList();
+
+			// Pick a random word
+			Random random = new Random();
+			if (validWords.Count > 0)
+			{
+				string randomWord = validWords[random.Next(validWords.Count)];
+				this.computerWord = randomWord.ToUpper();
+			}
+
+			//Shuffling the word and add letters to the size of 12
+			List<char> shuffledWord = this.computerWord.ToList();
+			shuffledWord = shuffledWord.OrderBy(x => random.Next()).ToList();
+
+			while (shuffledWord.Count != 12)
+				shuffledWord.Add((char)random.Next('A', 'Z' + 1));
+
+			MessageBox.Show("Shuffled word is of length: ", shuffledWord.Count.ToString());
+
+			return new string(shuffledWord.ToArray());
+
+		}
+
+		//Stopping letters
+		private void buttonStop_Click(object sender, EventArgs e)
+		{
+			// Counting and incrementing number of stops
+			if (this.buttonStop.Tag == null)
+				this.buttonStop.Tag = 0;
+			int countStops = (int)this.buttonStop.Tag;
+			
+
+			this.buttonsLetters[(int)this.buttonStop.Tag].Text = this.shuffledWordLetters_Animation[(int)this.buttonStop.Tag].ToString();
+			this.buttonStop.Tag = countStops + 1;
+
+			if ((int)this.buttonStop.Tag == 12)
+			{
+
+				foreach (Button button in this.buttonsLetters)
+					button.Enabled = true;
+
+				this.buttonStop.Visible = false;
+				this.buttonAcceptWord.Visible = true;
+				letterTimer.Stop();
+				
+			}
+
+		}
+
+		private void LetterTimer_Tick(object? sender, EventArgs e)
+		{
+			if (this.buttonStop.Tag != null)
+				this.buttonsLetters[(int)this.buttonStop.Tag].Text = this.currentChar_Animation.ToString();
+
+			if (this.currentChar_Animation == 'Z')
+				this.currentChar_Animation = 'A'; // Loop back to A
+			else
+				this.currentChar_Animation++;
+		}
+
 
 		//Adding letter to answer by click
 		private void buttonLetter_Click(object sender, MouseEventArgs e)
@@ -121,6 +221,45 @@ namespace Slagalica.Forms
 
 			}
 		}
+
+		//Does word Exist - Accepting the word
+		private void buttonAcceptWord_Click(object sender, EventArgs e)
+		{
+			string wordsFilePath = "";
+
+			//Getting word from buttons
+			string word = "";
+			foreach (Button button in this.buttonsAnswers)
+				if (button.Text != "")
+					word += button.Text;
+			word = word.ToLower();
+
+			//Checking language
+			bool isWord = false;
+			if (this.language == "sr")
+				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
+			else
+				MessageBox.Show("There is no English version yet"); // To be implemented when english words are found
+
+			//Checking if the word exists
+			foreach (var line in File.ReadLines(wordsFilePath))
+			{
+				if (line == word)
+				{
+					isWord = true;
+					break;
+				}
+			}
+
+			//Showing result to the user
+			if (isWord)
+				MessageBox.Show("Word is CORRECT! Implementaition of UI nedded!");//Implement some type of marking that the word is correct
+			else
+				MessageBox.Show("Word is INCORRECT! Implementaition of UI nedded!");//Implement some type of marking that the word is incorrect,
+
+		}
+
+		
 	}
 	#endregion
 
