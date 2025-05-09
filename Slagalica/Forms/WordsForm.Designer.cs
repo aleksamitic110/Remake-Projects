@@ -32,6 +32,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordsForm));
 			labelWordsHeader = new Label();
 			Panel_Letters = new Panel();
+			labelComputerWord = new Label();
+			label1 = new Label();
 			buttonStop = new Button();
 			buttonDeleteAllLetters = new Button();
 			buttonBackspaceLetter = new Button();
@@ -77,6 +79,8 @@
 			// 
 			// Panel_Letters
 			// 
+			Panel_Letters.Controls.Add(labelComputerWord);
+			Panel_Letters.Controls.Add(label1);
 			Panel_Letters.Controls.Add(buttonStop);
 			Panel_Letters.Controls.Add(buttonDeleteAllLetters);
 			Panel_Letters.Controls.Add(buttonBackspaceLetter);
@@ -109,6 +113,25 @@
 			Panel_Letters.Name = "Panel_Letters";
 			Panel_Letters.Size = new Size(776, 386);
 			Panel_Letters.TabIndex = 1;
+			// 
+			// labelComputerWord
+			// 
+			labelComputerWord.AutoSize = true;
+			labelComputerWord.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			labelComputerWord.Location = new Point(253, 341);
+			labelComputerWord.Name = "labelComputerWord";
+			labelComputerWord.Size = new Size(0, 37);
+			labelComputerWord.TabIndex = 29;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label1.Location = new Point(35, 339);
+			label1.Name = "label1";
+			label1.Size = new Size(234, 37);
+			label1.TabIndex = 28;
+			label1.Text = "Computer word: ";
 			// 
 			// buttonStop
 			// 
@@ -522,6 +545,7 @@
 			Text = "WordsForm";
 			Load += WordsForm_Load;
 			Panel_Letters.ResumeLayout(false);
+			Panel_Letters.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -560,5 +584,7 @@
 		private Button buttonBackspaceLetter;
 		private Button buttonStop;
 		private System.Windows.Forms.Timer letterTimer;
+		private Label labelComputerWord;
+		private Label label1;
 	}
 }

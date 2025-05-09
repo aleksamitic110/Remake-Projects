@@ -123,7 +123,7 @@ namespace Slagalica.Forms
 			while (shuffledWord.Count != 12)
 				shuffledWord.Add((char)random.Next('A', 'Z' + 1));
 
-			MessageBox.Show("Shuffled word is of length: ", shuffledWord.Count.ToString());
+			
 
 			return new string(shuffledWord.ToArray());
 
@@ -225,9 +225,17 @@ namespace Slagalica.Forms
 		//Does word Exist - Accepting the word
 		private void buttonAcceptWord_Click(object sender, EventArgs e)
 		{
-			string wordsFilePath = "";
+
+			//Not allowing to accept word if there are not enough letters
+			int count = 0; 
+			foreach (Button button in this.buttonsAnswers)
+				if (button.Text != "")
+					count++;
+			if (count < 2)
+				return;
 
 			//Getting word from buttons
+			string wordsFilePath = "";
 			string word = "";
 			foreach (Button button in this.buttonsAnswers)
 				if (button.Text != "")
@@ -239,7 +247,7 @@ namespace Slagalica.Forms
 			if (this.language == "sr")
 				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
 			else
-				MessageBox.Show("There is no English version yet"); // To be implemented when english words are found
+				MessageBox.Show("There is no English version yet"); // TODO - English version
 
 			//Checking if the word exists
 			foreach (var line in File.ReadLines(wordsFilePath))
@@ -251,11 +259,18 @@ namespace Slagalica.Forms
 				}
 			}
 
+
 			//Showing result to the user
-			if (isWord)
-				MessageBox.Show("Word is CORRECT! Implementaition of UI nedded!");//Implement some type of marking that the word is correct
-			else
-				MessageBox.Show("Word is INCORRECT! Implementaition of UI nedded!");//Implement some type of marking that the word is incorrect,
+			Color color = Color.Green;
+			if (!isWord)
+				color = Color.Red;
+
+			foreach (Button button in this.buttonsAnswers)
+				if (button.Text != "")
+					button.BackColor = color;
+
+			//Show computers word
+			this.labelComputerWord.Text = this.computerWord;
 
 		}
 
