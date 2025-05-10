@@ -13,6 +13,14 @@ using Slagalica;
 
 namespace Slagalica.Forms
 {
+
+	/* TODOS
+		TODO: Add english
+		TODO: Add Serbian cyrillic (current version with latin is not stable because of letters "Nj, Lj, Dj"....)
+		TODO: Add Timer animation
+		TODO: ADD music 
+	*/
+
 	public partial class WordsForm : Form
 	{
 		private List<Button> buttonsLetters; // List of buttons that sotres all the buttons of possible letters
