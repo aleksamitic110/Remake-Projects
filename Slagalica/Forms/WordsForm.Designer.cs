@@ -64,6 +64,7 @@
 			buttonLetter1 = new Button();
 			buttonBack = new Button();
 			letterTimer = new System.Windows.Forms.Timer(components);
+			gameTimer = new System.Windows.Forms.Timer(components);
 			Panel_Letters.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -586,5 +587,6 @@
 		private System.Windows.Forms.Timer letterTimer;
 		private Label labelComputerWord;
 		private Label label1;
+		private System.Windows.Forms.Timer gameTimer;
 	}
 }

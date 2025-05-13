@@ -15,8 +15,6 @@ namespace Slagalica.Forms
 {
 
 	/* TODOS
-		TODO: Add english
-		TODO: Add Serbian cyrillic (current version with latin is not stable because of letters "Nj, Lj, Dj"....)
 		TODO: Add Timer animation
 		TODO: ADD music 
 	*/
@@ -109,7 +107,7 @@ namespace Slagalica.Forms
 			if (this.language == "sr")
 				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
 			else
-				MessageBox.Show("There is no English version yet"); // To be implemented when english words are found
+				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_English.txt");
 
 			// Filter valid words
 			var validWords = File.ReadLines(wordsFilePath)
@@ -255,7 +253,7 @@ namespace Slagalica.Forms
 			if (this.language == "sr")
 				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
 			else
-				MessageBox.Show("There is no English version yet"); // TODO - English version
+				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
 
 			//Checking if the word exists
 			foreach (var line in File.ReadLines(wordsFilePath))
@@ -266,7 +264,6 @@ namespace Slagalica.Forms
 					break;
 				}
 			}
-
 
 			//Showing result to the user
 			Color color = Color.Green;
