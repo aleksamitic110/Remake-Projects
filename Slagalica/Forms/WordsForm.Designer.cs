@@ -33,8 +33,7 @@
 			labelWordsHeader = new Label();
 			Panel_Letters = new Panel();
 			labelComputerWord = new Label();
-			label1 = new Label();
-			buttonStop = new Button();
+			textForComputerWord = new Label();
 			buttonDeleteAllLetters = new Button();
 			buttonBackspaceLetter = new Button();
 			buttonAcceptWord = new Button();
@@ -62,6 +61,7 @@
 			buttonLetter3 = new Button();
 			buttonLetter2 = new Button();
 			buttonLetter1 = new Button();
+			buttonStop = new Button();
 			buttonBack = new Button();
 			letterTimer = new System.Windows.Forms.Timer(components);
 			gameTimer = new System.Windows.Forms.Timer(components);
@@ -81,7 +81,7 @@
 			// Panel_Letters
 			// 
 			Panel_Letters.Controls.Add(labelComputerWord);
-			Panel_Letters.Controls.Add(label1);
+			Panel_Letters.Controls.Add(textForComputerWord);
 			Panel_Letters.Controls.Add(buttonStop);
 			Panel_Letters.Controls.Add(buttonDeleteAllLetters);
 			Panel_Letters.Controls.Add(buttonBackspaceLetter);
@@ -118,36 +118,21 @@
 			// labelComputerWord
 			// 
 			labelComputerWord.AutoSize = true;
-			labelComputerWord.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			labelComputerWord.Location = new Point(253, 341);
+			labelComputerWord.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+			labelComputerWord.Location = new Point(285, 268);
 			labelComputerWord.Name = "labelComputerWord";
-			labelComputerWord.Size = new Size(0, 37);
+			labelComputerWord.Size = new Size(0, 47);
 			labelComputerWord.TabIndex = 29;
 			// 
-			// label1
+			// textForComputerWord
 			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(35, 339);
-			label1.Name = "label1";
-			label1.Size = new Size(234, 37);
-			label1.TabIndex = 28;
-			label1.Text = "Computer word: ";
-			// 
-			// buttonStop
-			// 
-			buttonStop.BackgroundImageLayout = ImageLayout.Stretch;
-			buttonStop.FlatAppearance.MouseDownBackColor = Color.Lime;
-			buttonStop.FlatAppearance.MouseOverBackColor = Color.Lime;
-			buttonStop.FlatStyle = FlatStyle.Flat;
-			buttonStop.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			buttonStop.Location = new Point(279, 283);
-			buttonStop.Name = "buttonStop";
-			buttonStop.Size = new Size(238, 55);
-			buttonStop.TabIndex = 27;
-			buttonStop.Text = "Stop";
-			buttonStop.UseVisualStyleBackColor = true;
-			buttonStop.Click += buttonStop_Click;
+			textForComputerWord.AutoSize = true;
+			textForComputerWord.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			textForComputerWord.Location = new Point(35, 268);
+			textForComputerWord.Name = "textForComputerWord";
+			textForComputerWord.Size = new Size(250, 40);
+			textForComputerWord.TabIndex = 28;
+			textForComputerWord.Text = "Computer word: ";
 			// 
 			// buttonDeleteAllLetters
 			// 
@@ -517,6 +502,21 @@
 			buttonLetter1.UseVisualStyleBackColor = false;
 			buttonLetter1.MouseClick += buttonLetter_Click;
 			// 
+			// buttonStop
+			// 
+			buttonStop.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonStop.FlatAppearance.MouseDownBackColor = Color.Lime;
+			buttonStop.FlatAppearance.MouseOverBackColor = Color.Lime;
+			buttonStop.FlatStyle = FlatStyle.Flat;
+			buttonStop.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			buttonStop.Location = new Point(279, 283);
+			buttonStop.Name = "buttonStop";
+			buttonStop.Size = new Size(238, 55);
+			buttonStop.TabIndex = 27;
+			buttonStop.Text = "Stop";
+			buttonStop.UseVisualStyleBackColor = true;
+			buttonStop.Click += buttonStop_Click;
+			// 
 			// buttonBack
 			// 
 			buttonBack.BackgroundImage = (Image)resources.GetObject("buttonBack.BackgroundImage");
@@ -586,7 +586,7 @@
 		private Button buttonStop;
 		private System.Windows.Forms.Timer letterTimer;
 		private Label labelComputerWord;
-		private Label label1;
+		private Label textForComputerWord;
 		private System.Windows.Forms.Timer gameTimer;
 	}
 }

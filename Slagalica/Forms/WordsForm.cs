@@ -70,9 +70,15 @@ namespace Slagalica.Forms
 			this.buttonAcceptWord.Visible = false; // Accepting word button is not visible at the beginning
 			this.computerWord = "";
 			this.shuffledWordLetters_Animation = "";
+			if (language == "en")
+			{
+				this.labelWordsHeader.Text = "WORDS";
+				this.labelComputerWord.Location = new Point(300, 9);
+			}
 		}
 		private void WordsForm_Load(object sender, EventArgs e)
 		{
+			this.textForComputerWord.Visible = false;
 
 			//Get computer word but shuffled for Animation
 			this.shuffledWordLetters_Animation = makeComputerWord();
@@ -88,7 +94,7 @@ namespace Slagalica.Forms
 				button.Enabled = false;
 		}
 
-
+		//Buttons clicks
 		#region BUTTON CLICK
 
 		//Back to main form
@@ -251,14 +257,17 @@ namespace Slagalica.Forms
 			//Checking language
 			bool isWord = false;
 			if (this.language == "sr")
+			{
+				this.textForComputerWord.Text = "Kompjuter rec:";
 				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
+			}
 			else
-				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_Serbian.txt");
+				wordsFilePath = Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_List_English.txt");
 
 			//Checking if the word exists
 			foreach (var line in File.ReadLines(wordsFilePath))
 			{
-				if (line == word)
+				if (line.Replace("\n", "") == word)
 				{
 					isWord = true;
 					break;
@@ -276,7 +285,13 @@ namespace Slagalica.Forms
 
 			//Show computers word
 			this.labelComputerWord.Text = this.computerWord;
+			this.labelComputerWord.Location = new Point(285, 265);
 
+			//TODO: End game
+			this.buttonBackspaceLetter.Visible = false;
+			this.buttonDeleteAllLetters.Visible = false;
+			this.buttonAcceptWord.Visible = false;
+			this.textForComputerWord.Visible = true;
 		}
 
 		
