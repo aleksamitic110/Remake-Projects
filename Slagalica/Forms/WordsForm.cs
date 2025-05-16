@@ -9,14 +9,14 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using Slagalica;
 
 namespace Slagalica.Forms
 {
 
 	/* TODOS
-		TODO: Add Timer animation
-		TODO: ADD music 
+		TODO: Look for better word lists/make those have only letters
 	*/
 
 	public partial class WordsForm : Form
@@ -26,9 +26,9 @@ namespace Slagalica.Forms
 		private int currentButtonAnswer;    // Making track of index in which button next letter should be added
 		private String language; // Language of the game
 		private String computerWord; // Word that computer made
-		private int currentButtonLetterIndex_Ainmation = 0; // Index of the current letter that animation is being displayed for
 		private char currentChar_Animation = 'A'; // Current letter that is being displayed in the animation
 		private string shuffledWordLetters_Animation; // Shuffled letters of the word that is being displayed in the animation
+		private SoundPlayer musicPlayer; // Music player for the game
 		public WordsForm(String language)
 		{
 			InitializeComponent();
@@ -75,11 +75,16 @@ namespace Slagalica.Forms
 				this.labelWordsHeader.Text = "WORDS";
 				this.labelComputerWord.Location = new Point(300, 9);
 			}
+			this.musicPlayer = new SoundPlayer(Path.Combine(Application.StartupPath, "Resources", "Slova_Recources", "Words_music.wav"));
 		}
 		private void WordsForm_Load(object sender, EventArgs e)
 		{
-			this.textForComputerWord.Visible = false;
 
+			//Setting up the form and music
+			this.textForComputerWord.Visible = false;
+			this.buttonNextGame.Visible = false;
+			musicPlayer.PlayLooping();
+			
 			//Get computer word but shuffled for Animation
 			this.shuffledWordLetters_Animation = makeComputerWord();
 			this.buttonStop.Tag = 0;
@@ -153,6 +158,7 @@ namespace Slagalica.Forms
 			this.buttonsLetters[(int)this.buttonStop.Tag].Text = this.shuffledWordLetters_Animation[(int)this.buttonStop.Tag].ToString();
 			this.buttonStop.Tag = countStops + 1;
 
+			//If all letters are stopped show button AcceptWord and start game timer
 			if ((int)this.buttonStop.Tag == 12)
 			{
 
@@ -162,11 +168,30 @@ namespace Slagalica.Forms
 				this.buttonStop.Visible = false;
 				this.buttonAcceptWord.Visible = true;
 				letterTimer.Stop();
+
+				this.gameTimer.Interval = 60_000 / this.panelGameTimer.Width;
+				this.gameTimer.Tick += GameTimer_Tick;
+				this.gameTimer.Start();
 				
 			}
 
 		}
+		//Timers for game and letters animation
+		private void GameTimer_Tick(object? sender, EventArgs e) {
+			
+			if (this.panelGameTimer.Width < 259)
+				this.panelGameTimer.BackColor = Color.Yellow;
+		    if (this.panelGameTimer.Width < 129)
+				this.panelGameTimer.BackColor = Color.Red;
 
+			if (this.panelGameTimer.Width > 0)
+				this.panelGameTimer.Width -= 1;
+			else
+			{
+				this.gameTimer.Stop();
+				this.buttonAcceptWord_Click(this.buttonAcceptWord, EventArgs.Empty);
+			}
+		} 
 		private void LetterTimer_Tick(object? sender, EventArgs e)
 		{
 			if (this.buttonStop.Tag != null)
@@ -243,7 +268,7 @@ namespace Slagalica.Forms
 			foreach (Button button in this.buttonsAnswers)
 				if (button.Text != "")
 					count++;
-			if (count < 2)
+			if (count < 2 && this.gameTimer.Enabled == true)
 				return;
 
 			//Getting word from buttons
@@ -274,7 +299,7 @@ namespace Slagalica.Forms
 				}
 			}
 
-			//Showing result to the user
+			//Showing result to the user and computer word and stopping the game
 			Color color = Color.Green;
 			if (!isWord)
 				color = Color.Red;
@@ -283,15 +308,18 @@ namespace Slagalica.Forms
 				if (button.Text != "")
 					button.BackColor = color;
 
-			//Show computers word
+			
 			this.labelComputerWord.Text = this.computerWord;
 			this.labelComputerWord.Location = new Point(285, 265);
-
-			//TODO: End game
+			if (this.gameTimer.Enabled)
+				this.gameTimer.Stop();
+			
 			this.buttonBackspaceLetter.Visible = false;
 			this.buttonDeleteAllLetters.Visible = false;
 			this.buttonAcceptWord.Visible = false;
 			this.textForComputerWord.Visible = true;
+			this.buttonNextGame.Visible = true;
+			this.musicPlayer.Stop();
 		}
 
 		

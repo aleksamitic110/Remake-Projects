@@ -34,6 +34,7 @@
 			Panel_Letters = new Panel();
 			labelComputerWord = new Label();
 			textForComputerWord = new Label();
+			buttonStop = new Button();
 			buttonDeleteAllLetters = new Button();
 			buttonBackspaceLetter = new Button();
 			buttonAcceptWord = new Button();
@@ -61,10 +62,11 @@
 			buttonLetter3 = new Button();
 			buttonLetter2 = new Button();
 			buttonLetter1 = new Button();
-			buttonStop = new Button();
 			buttonBack = new Button();
 			letterTimer = new System.Windows.Forms.Timer(components);
 			gameTimer = new System.Windows.Forms.Timer(components);
+			panelGameTimer = new Panel();
+			buttonNextGame = new Button();
 			Panel_Letters.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -80,6 +82,7 @@
 			// 
 			// Panel_Letters
 			// 
+			Panel_Letters.Controls.Add(buttonNextGame);
 			Panel_Letters.Controls.Add(labelComputerWord);
 			Panel_Letters.Controls.Add(textForComputerWord);
 			Panel_Letters.Controls.Add(buttonStop);
@@ -133,6 +136,21 @@
 			textForComputerWord.Size = new Size(250, 40);
 			textForComputerWord.TabIndex = 28;
 			textForComputerWord.Text = "Computer word: ";
+			// 
+			// buttonStop
+			// 
+			buttonStop.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonStop.FlatAppearance.MouseDownBackColor = Color.Lime;
+			buttonStop.FlatAppearance.MouseOverBackColor = Color.Lime;
+			buttonStop.FlatStyle = FlatStyle.Flat;
+			buttonStop.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			buttonStop.Location = new Point(279, 283);
+			buttonStop.Name = "buttonStop";
+			buttonStop.Size = new Size(238, 55);
+			buttonStop.TabIndex = 27;
+			buttonStop.Text = "Stop";
+			buttonStop.UseVisualStyleBackColor = true;
+			buttonStop.Click += buttonStop_Click;
 			// 
 			// buttonDeleteAllLetters
 			// 
@@ -502,21 +520,6 @@
 			buttonLetter1.UseVisualStyleBackColor = false;
 			buttonLetter1.MouseClick += buttonLetter_Click;
 			// 
-			// buttonStop
-			// 
-			buttonStop.BackgroundImageLayout = ImageLayout.Stretch;
-			buttonStop.FlatAppearance.MouseDownBackColor = Color.Lime;
-			buttonStop.FlatAppearance.MouseOverBackColor = Color.Lime;
-			buttonStop.FlatStyle = FlatStyle.Flat;
-			buttonStop.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			buttonStop.Location = new Point(279, 283);
-			buttonStop.Name = "buttonStop";
-			buttonStop.Size = new Size(238, 55);
-			buttonStop.TabIndex = 27;
-			buttonStop.Text = "Stop";
-			buttonStop.UseVisualStyleBackColor = true;
-			buttonStop.Click += buttonStop_Click;
-			// 
 			// buttonBack
 			// 
 			buttonBack.BackgroundImage = (Image)resources.GetObject("buttonBack.BackgroundImage");
@@ -530,12 +533,34 @@
 			buttonBack.UseVisualStyleBackColor = true;
 			buttonBack.Click += buttonBack_Click;
 			// 
+			// panelGameTimer
+			// 
+			panelGameTimer.BackColor = Color.Lime;
+			panelGameTimer.Location = new Point(152, 73);
+			panelGameTimer.Name = "panelGameTimer";
+			panelGameTimer.Size = new Size(498, 14);
+			panelGameTimer.TabIndex = 30;
+			// 
+			// buttonNextGame
+			// 
+			buttonNextGame.BackgroundImageLayout = ImageLayout.Stretch;
+			buttonNextGame.FlatAppearance.MouseOverBackColor = Color.Red;
+			buttonNextGame.FlatStyle = FlatStyle.Flat;
+			buttonNextGame.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			buttonNextGame.Location = new Point(584, 321);
+			buttonNextGame.Name = "buttonNextGame";
+			buttonNextGame.Size = new Size(177, 55);
+			buttonNextGame.TabIndex = 30;
+			buttonNextGame.Text = "Next game";
+			buttonNextGame.UseVisualStyleBackColor = true;
+			// 
 			// WordsForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.SteelBlue;
 			ClientSize = new Size(800, 471);
+			Controls.Add(panelGameTimer);
 			Controls.Add(buttonBack);
 			Controls.Add(Panel_Letters);
 			Controls.Add(labelWordsHeader);
@@ -588,5 +613,7 @@
 		private Label labelComputerWord;
 		private Label textForComputerWord;
 		private System.Windows.Forms.Timer gameTimer;
+		private Panel panelGameTimer;
+		private Button buttonNextGame;
 	}
 }
